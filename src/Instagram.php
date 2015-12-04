@@ -71,7 +71,7 @@ class Instagram
      *
      * @var string[]
      */
-    private $_scopes = array('basic', 'likes', 'comments', 'relationships');
+    private $_scopes = array('basic', 'public_content', 'follower_list', 'likes', 'comments', 'relationships');
 
     /**
      * Available actions.
