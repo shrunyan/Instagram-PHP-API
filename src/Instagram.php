@@ -147,7 +147,7 @@ class Instagram
             $params['count'] = $limit;
         }
 
-        return $this->_makeCall('users/search', false, $params);
+        return $this->_makeCall('users/search', true, $params);
     }
 
     /**
