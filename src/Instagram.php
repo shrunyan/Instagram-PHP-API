@@ -315,7 +315,7 @@ class Instagram
      */
     public function searchMedia($lat, $lng, $distance = 1000, $minTimestamp = null, $maxTimestamp = null)
     {
-        return $this->_makeCall('media/search', false, array(
+        return $this->_makeCall('media/search', true, array(
             'lat' => $lat,
             'lng' => $lng,
             'distance' => $distance,
@@ -355,7 +355,7 @@ class Instagram
      */
     public function searchTags($name)
     {
-        return $this->_makeCall('tags/search', false, array('q' => $name));
+        return $this->_makeCall('tags/search', true, array('q' => $name));
     }
 
     /**
@@ -367,7 +367,7 @@ class Instagram
      */
     public function getTag($name)
     {
-        return $this->_makeCall('tags/' . $name);
+        return $this->_makeCall('tags/' . $name, true);
     }
 
     /**
@@ -386,7 +386,7 @@ class Instagram
             $params['count'] = $limit;
         }
 
-        return $this->_makeCall('tags/' . $name . '/media/recent', false, $params);
+        return $this->_makeCall('tags/' . $name . '/media/recent', true, $params);
     }
 
     /**
